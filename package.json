@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-aks-demo",
+  "version": "1.0.0",
+  "description": "Node.js app deployed to Azure Kubernetes Service via GitHub Actions",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
