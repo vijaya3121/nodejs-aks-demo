@@ -106,6 +106,7 @@ Use kubectl get pods and kubectl logs <pod-name> for debugging.
 ### 📸 Example Output
 
 After deployment, visiting the LoadBalancer IP in the browser should display your Node.js app’s homepage or API output.
+![nodejs ouput](https://github.com/vijaya3121/nodejs-aks-demo/blob/main/nodejs%20output.png)
 
 ---
 ### 👩‍💻 Author
