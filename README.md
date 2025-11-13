@@ -1,6 +1,7 @@
-# Node.js App Deployment with CI/CD on AKS
 
-This project demonstrates automated deployment of a Node.js application to **Azure Kubernetes Service (AKS)** using **GitHub Actions CI/CD pipeline**.
+# 🚀 Node.js App Deployment with CI/CD on Azure AKS
+
+This project demonstrates **automated deployment** of a Node.js application to **Azure Kubernetes Service (AKS)** using a **GitHub Actions CI/CD pipeline**.
 
 ---
 
@@ -8,7 +9,7 @@ This project demonstrates automated deployment of a Node.js application to **Azu
 
 ├── app/ # Node.js application source code
 ├── Dockerfile # Docker image build instructions
-├── terraform/ # Terraform files for Azure infrastructure
+├── terraform/ # Terraform files for Azure infrastructure (optional)
 └── .github/
 └── workflows/
 └── ci-cd.yaml # GitHub Actions pipeline definition
@@ -18,24 +19,25 @@ This project demonstrates automated deployment of a Node.js application to **Azu
 ## ⚙️ CI/CD Pipeline Overview
 
 The pipeline automatically:
-1. **Builds** the Node.js Docker image.
-2. **Pushes** the image to **Azure Container Registry (ACR)**.
-3. **Deploys** the image to **Azure Kubernetes Service (AKS)**.
 
-### Workflow Steps
+1. **Builds** the Node.js Docker image  
+2. **Pushes** the image to **Azure Container Registry (ACR)**  
+3. **Deploys** the image to **Azure Kubernetes Service (AKS)**  
 
-- **Trigger:** On every `push` to the `main` branch.  
-- **Build & Push Image:** Uses `docker build` and `docker push` commands.  
-- **Deploy:** Uses `kubectl apply` to update AKS with the new image version.
+### 🔁 Workflow Steps
+
+- **Trigger:** On every `push` to the `main` branch  
+- **Build & Push Image:** Uses `docker build` and `docker push`  
+- **Deploy:** Uses `kubectl set image` to update AKS with the new image version  
 
 ---
 
 ## ☁️ Prerequisites
 
-- Azure account
-- AKS cluster and ACR created
-- GitHub repository connected to your Azure credentials (via secrets)
-- Terraform for infrastructure setup (optional if already created)
+- Active **Azure account**  
+- **AKS cluster** and **ACR** created  
+- GitHub repository connected to Azure credentials (`AZURE_CREDENTIALS` secret)  
+- (Optional) **Terraform** for infrastructure setup  
 
 ---
 
@@ -65,6 +67,7 @@ spec:
         - containerPort: 3000
 ```
 ---
+
 ### **Service YAML**
 ```
 apiVersion: v1
