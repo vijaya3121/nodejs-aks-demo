@@ -37,5 +37,6 @@ jobs:
 
       - name: Deploy to AKS
         run: |
-          kubectl set image deployment/node-demo node-demo=$REGISTRY_NAME.azurecr.io/$IMAGE_NAME:${{ github.run_number }}
-          kubectl rollout status deployment/node-demo
+          kubectl set image deployment/nodejs-deployment nodejs-container=$REGISTRY_NAME.azurecr.io/$IMAGE_NAME:${{ github.run_number }}
+          kubectl rollout status deployment/nodejs-deployment
+
